@@ -1,0 +1,32 @@
+name: Integracion Continua - Plataforma Medica
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  pruebas:
+    name: Validar proyecto PHP
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Descargar codigo
+        uses: actions/checkout@v4
+
+      - name: Configurar PHP 8.4
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.4'
+          coverage: none
+
+      - name: Instalar dependencias
+        run: composer install --no-interaction --prefer-dist
+
+      - name: Verificar sintaxis PHP
+        shell: bash
+        run: |
+          find . -path './vendor' -prune -o -name '*.php' -type f -print0 |
+          xargs -0 -r -n 1 php -l
+
+      - name: Ejecutar pruebas PHPUnit
+        run: composer test

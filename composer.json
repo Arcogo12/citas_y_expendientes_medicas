@@ -1,0 +1,16 @@
+{
+    "name": "clinica/plataforma-medica",
+    "description": "Plataforma web de citas y expedientes médicos",
+    "type": "project",
+    "require": {
+        "php": "^8.4",
+        "ext-pdo": "*",
+        "vlucas/phpdotenv": "^5.8"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^11.5"
+    },
+    "scripts": {
+        "test": "phpunit"
+    }
+}
