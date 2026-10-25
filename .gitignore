@@ -18,3 +18,4 @@ Thumbs.db
 /.phpunit.cache/
 .env
 .phpunit.result.cache
+~$*
