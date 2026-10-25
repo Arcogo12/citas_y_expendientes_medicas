@@ -1,0 +1,16 @@
+# Configuración de agentes / IA
+.agents/
+
+# Dependencias de Composer
+/vendor/
+
+# Variables de entorno
+.env
+.env.local
+*.env
+
+# Archivos de IDE y sistema operativo
+.vscode/
+.idea/
+Thumbs.db
+.DS_Store
