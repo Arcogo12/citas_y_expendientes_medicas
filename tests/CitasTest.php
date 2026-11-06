@@ -105,8 +105,7 @@ final class CitasTest extends TestCase
         $fechaPasada = '2020-01-01';
         $fechaHoy = '2026-10-25';
 
-        // Simulacion de fallo para evidencia en GitHub Actions (provoca una X roja)
-        $this->assertTrue(
+        $this->assertFalse(
             $this->esFechaValidaParaCita($fechaPasada, $fechaHoy)
         );
     }
